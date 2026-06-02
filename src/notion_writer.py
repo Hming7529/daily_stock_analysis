@@ -45,6 +45,9 @@ def write_prediction(record: dict):
             "AI评分": {
                 "number": record["score"]
             },
+            "市场情绪": {
+                "select": {"name": record.get("sentiment", "中性")}
+            },
             "建议买入价": {
                 "number": record.get("buy_price", 0)
             },
